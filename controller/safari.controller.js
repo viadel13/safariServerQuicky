@@ -1,3 +1,4 @@
+const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 
 
@@ -14,6 +15,11 @@ const OTP = async (req, res) => {
   res.json({ numericId: numericId });
 };
 
+const token = async (req, res) => {
+  res.json({ jeton: uuidv4() });
+};
+
 module.exports = {
   OTP,
+  token
 };
